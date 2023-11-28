@@ -25,9 +25,17 @@ export const todoReducer = createSlice({
             if (todoToUpdate) {
                 todoToUpdate.isComplete = !todoToUpdate.isComplete;
             }
+        },
+        editTodo: (state, action) => {
+            const todoToUpdate = state.todos.find((todo) => {
+                return todo.id === action.payload.id
+            });
+            // if (todoToUpdate) {
+            //     todoToUpdate.text = "";
+            // }
         }
     }
 })
 
-export const { addTodo, removeTodo, isCompleteTodo } = todoReducer.actions
+export const { addTodo, removeTodo, isCompleteTodo, editTodo } = todoReducer.actions
 export default todoReducer.reducer

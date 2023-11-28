@@ -1,8 +1,8 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { removeTodo, isCompleteTodo } from "../reducers/todo/todoReducer";
+import { removeTodo, isCompleteTodo, editTodo } from "../reducers/todo/todoReducer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faTrash, faEdit } from "@fortawesome/free-solid-svg-icons";
 export const Todos = () => {
     const todos = useSelector(state => state.todos);
     const dispatch = useDispatch();
@@ -26,6 +26,9 @@ export const Todos = () => {
                                 {todo.isComplete ? (<span className="bg-red-600 rounded text-white px-2 py-1">Completed</span>) : (" ")}
                                 <FontAwesomeIcon icon={faTrash} onClick={() => dispatch(removeTodo(todo.id))}
                                     className="bg-red-500 mx-4 hover:bg-red-700 text-white font-bold py-2 px-2 rounded" />
+                                <FontAwesomeIcon icon={faEdit} onClick={() => handleEditIndex(todos)}
+                                    className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-2 rounded" />
+
                             </div>
                         </div>
                     );
