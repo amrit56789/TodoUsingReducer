@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTodo } from "../reducers/todo/todoReducer";
-import { Todos } from "../Component/Todos";
 
 export const AddTodo = () => {
     const [input, setInput] = useState('');
+    const [error, setError] = useState(false)
     const dispatch = useDispatch();
 
     const addTodoHandler = (e) => {

@@ -21,9 +21,11 @@ export const todoReducer = createSlice({
             })
         },
         isCompleteTodo: (state, action) => {
-            const todoToUpdate = state.todos.find((todo) => todo.id === action.payload);
-            if (todoToUpdate) {
-                todoToUpdate.isComplete = !todoToUpdate.isComplete;
+            const todoIndex = state.todos.find((todo) => todo.id === action.payload);
+            if (todoIndex !== -1) {
+                const updatedTodo = { ...state.todos[todoIndex] };
+                updatedTodo.isComplete = !updatedTodo.isComplete;
+                state.todos.splice(todoIndex, 1, updatedTodo);
             }
         },
         editTodo: (state, action) => {
