@@ -9,9 +9,14 @@ export const AddTodo = () => {
 
     const addTodoHandler = (e) => {
         e.preventDefault();
-        
+        if (input === "") {
+            setError("Please enter a text.");
+            return;
+        }
         dispatch(addTodo(input));
         setInput("");
+        setError(false);
+
     };
 
     return (
@@ -35,7 +40,7 @@ export const AddTodo = () => {
                         Submit
                     </button>
                 </div>
-
+                {error && <p className="text-red-500">{error}</p>}
             </form>
         </div>
     );
