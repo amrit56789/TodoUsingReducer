@@ -9,13 +9,13 @@ export const AddTodo = () => {
 
     const addTodoHandler = (e) => {
         e.preventDefault();
+        
         dispatch(addTodo(input));
         setInput("");
     };
 
     return (
         <div className="mt-6">
-            <Todos />
             <form onSubmit={addTodoHandler} className="">
                 <h1 className="mb-2 font-bold text-2xl">Todo</h1>
                 <div className="flex flex-col">
