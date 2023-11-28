@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { removeTodo, isCompleteTodo } from "../reducers/todo/todoReducer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
-export const Todos = ({ input, setInput }) => {
+export const Todos = () => {
     const todos = useSelector(state => state.todos);
     const dispatch = useDispatch();
 

@@ -15,7 +15,7 @@ export const AddTodo = () => {
 
     return (
         <div className="mt-6">
-            <Todos input={input} setInput={setInput} />
+            <Todos />
             <form onSubmit={addTodoHandler} className="">
                 <h1 className="mb-2 font-bold text-2xl">Todo</h1>
                 <div className="flex flex-col">
