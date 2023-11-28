@@ -6,7 +6,9 @@ import { faTrash, faEdit } from "@fortawesome/free-solid-svg-icons";
 export const Todos = () => {
     const todos = useSelector(state => state.todos);
     const dispatch = useDispatch();
-
+    const handleEditIndex = () =>{
+        
+    }
     return (
         <div className="">
             <h2 className="mb-2 font-bold text-3xl">Todos</h2>
